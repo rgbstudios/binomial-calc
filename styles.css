@@ -1,0 +1,27 @@
+* {
+  font-family: Roboto, Arial;
+  text-align: center;
+}
+#errorAlert {
+  display: none;
+}
+.form-control {
+  cursor: default !important;
+}
+.form-control{
+  display: inline !important;
+  margin-right: 20px;
+  width: 150px !important;
+}
+::-moz-selection {
+  background: #ccf;
+}
+::selection {
+  background: #ccf;
+}
+.btn-lg {
+  margin-bottom: 20px !important;
+}
+svg > g > g:last-child { /*prevent flickering on google charts*/
+  pointer-events: none;
+} 
