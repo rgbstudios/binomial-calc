@@ -23,7 +23,7 @@ svg > g > g:last-child { /*prevent flickering on google charts*/
   pointer-events: none;
 }
 #rgbIcon {
-  width: 50px;
+  width: 50px !important;
 }
 img {
   user-drag: none; 
