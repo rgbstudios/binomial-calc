@@ -4,6 +4,8 @@ v.1.0.0 5-20
 todo
 fix overflow, roudning, efficiency problems for very large input
 add history and share
+make mobile friendly
+# to map to values entered
 */
 
 function nchoosek(n,k){

@@ -33,3 +33,9 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+.table-responsive { /*for bootstrap layouts*/
+    overflow-x: auto;
+}
+.st-btn {
+  background-color: #333 !important; 
+}
