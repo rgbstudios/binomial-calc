@@ -14,10 +14,10 @@
   width: 150px !important;
 }
 ::-moz-selection {
-  background: #ccf;
+  background: #ccc;
 }
 ::selection {
-  background: #ccf;
+  background: #ccc;
 }
 svg > g > g:last-child { /*prevent flickering on google charts*/
   pointer-events: none;
