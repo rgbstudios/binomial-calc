@@ -35,9 +35,8 @@ img {
 }
 .table-responsive { /*for bootstrap layouts*/
     overflow-x: auto;
-    width: 100% ;
+    width: 90% ;
 }
 .st-btn {
   background-color: #333 !important;
-  border: 2px solid #ccc !important;
 }
