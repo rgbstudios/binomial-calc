@@ -10,7 +10,7 @@
 }
 .form-control{
   display: inline !important;
-  margin-right: 20px;
+  margin-right: 25px;
   width: 150px !important;
 }
 ::-moz-selection {
@@ -19,9 +19,17 @@
 ::selection {
   background: #ccf;
 }
-.btn-lg {
-  margin-bottom: 20px !important;
-}
 svg > g > g:last-child { /*prevent flickering on google charts*/
   pointer-events: none;
-} 
+}
+#rgbIcon {
+  width: 50px;
+}
+img {
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

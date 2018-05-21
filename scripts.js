@@ -1,5 +1,7 @@
 
-/*todo
+/*
+v.1.0.0 5-20
+todo
 fix overflow, roudning, efficiency problems for very large input
 add history and share
 */
@@ -62,6 +64,28 @@ function clear() {
   document.getElementById("nInput").value = '';
   document.getElementById("xInput").value = '';
   console.log('Cleared');
+}
+
+//https://stackoverflow.com/questions/3900701/onclick-go-full-screen?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+function toggleFullscreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
 }
 
 function calc() {
@@ -190,6 +214,10 @@ $(document).ready(function() {
 
   $('#clearButton').click(function() { //setting onclick in html didn't work for some reason...
     clear();
+  });
+
+  $('#fullscreenButton').click(function() {
+    toggleFullscreen();
   });
 
   $('#nightButton').click(function() {
