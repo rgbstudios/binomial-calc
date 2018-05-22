@@ -140,7 +140,7 @@ function calc() {
   document.getElementById("greaterOutput").value = round(greater(p, n, x),10);
   document.getElementById("lessEqualOutput").value = round(equal(p, n, x) + less(p, n, x),10);
   document.getElementById("greaterEqualOutput").value = round(equal(p, n, x) + greater(p, n, x),10);
-  document.getElementById("infoP").innerHTML = "Mean: " + round(mean(p, n, x),10) + "<br>Variance: " + round(variance(p, n, x),10) + "<br>  Std Dev: " + round(stddev(p, n, x),10);
+  document.getElementById("infoP").innerHTML = "Mean (&mu;) = " + round(mean(p, n, x),10) + "<br>Variance (&sigma;) = " + round(variance(p, n, x),10) + "<br>  Standard Deviation (&sigma;<sup>2</sup>) = " + round(stddev(p, n, x),10);
 
   //google charts
   google.charts.load('current', {'packages':['corechart','bar']});
