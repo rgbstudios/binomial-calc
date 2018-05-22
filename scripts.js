@@ -243,10 +243,16 @@ $(document).ready(function() {
     night = !night;
     if(night) {
       $('#nightStyles').prop('href','styles-night.css');
+      $('#metaColor1').prop('content','#333');
+      $('#metaColor2').prop('content','#333');
+      $('#metaColor3').prop('content','#333');
       calc(); //update google chart with correct color. when your night mode function is O(n^3)...
     }
     else {
       $('#nightStyles').prop('href','');
+      $('#metaColor1').prop('content','#ccc');
+      $('#metaColor2').prop('content','#ccc');
+      $('#metaColor3').prop('content','#ccc');
       calc();
     }
   });
