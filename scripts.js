@@ -1,16 +1,12 @@
 
 /*
-v.1.0.0 5-20
-todo
+v.1.0.1 5-21
+todo:
+
 fix overflow, roudning, efficiency problems for very large input
-add history and share
 make table more mobile friendly
 use realfavicongenerator.net
 
-https://stackoverflow.com/questions/9870512/how-to-obtain-the-query-string-from-the-current-url-with-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-use url to map queries to input
-when webpage loads, fill input with url
-when calculate, change url to input
 */
 
 function nchoosek(n,k){
@@ -100,8 +96,6 @@ function calc() {
   let n = parseInt(document.getElementById("nInput").value);
   let x = parseInt(document.getElementById("xInput").value);
 
-  history.replaceState({}, "", "?p=" + p + "&n=" + n + "&x=" + x);
-
   console.log("Calculating... Inputs: " + p + ", " + n + ", " + x);
 
   let errorP = document.getElementById("errorP");
@@ -135,6 +129,9 @@ function calc() {
     errorAlert.style.display = "block";
     return;
   }
+
+  //only if valid inputs
+  history.replaceState({}, "", "?p=" + p + "&n=" + n + "&x=" + x);
 
   //display results
   document.getElementById("chooseOutput").value = Math.round(nchoosek(n, x));
