@@ -4,8 +4,13 @@ v.1.0.0 5-20
 todo
 fix overflow, roudning, efficiency problems for very large input
 add history and share
-make mobile friendly
-# to map to values entered
+make table more mobile friendly
+use realfavicongenerator.net
+
+https://stackoverflow.com/questions/9870512/how-to-obtain-the-query-string-from-the-current-url-with-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+use url to map queries to input
+when webpage loads, fill input with url
+when calculate, change url to input
 */
 
 function nchoosek(n,k){
@@ -94,6 +99,9 @@ function calc() {
   let p = parseFloat(document.getElementById("pInput").value);
   let n = parseInt(document.getElementById("nInput").value);
   let x = parseInt(document.getElementById("xInput").value);
+
+  history.replaceState({}, "", "?p=" + p + "&n=" + n + "&x=" + x);
+
   console.log("Calculating... Inputs: " + p + ", " + n + ", " + x);
 
   let errorP = document.getElementById("errorP");
@@ -201,6 +209,15 @@ let night = false;
 
 
 $(document).ready(function() {
+
+  let url = new URL(window.location.href);
+  let p = url.searchParams.get("p");
+  let n = url.searchParams.get("n");
+  let x = url.searchParams.get("x");
+  console.log("loaded: " + p + ", " + n + ", " + x);
+  document.getElementById("pInput").value = p || "0.5";
+  document.getElementById("nInput").value = n || "40";
+  document.getElementById("xInput").value = x || "18";
 
   calc();
 
