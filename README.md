@@ -14,6 +14,4 @@ by Justin Golden for RGB Studios
 
 <a href="http://justingolden21.github.io">justingolden21.github.io</a>
 
-<a href="http://justingolden21.github.io">justingolden21.github.io</a>
-
 <a href="http://rgbstudios.org">rgbstudios.org</a>
