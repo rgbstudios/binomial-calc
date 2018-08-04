@@ -12,6 +12,8 @@ a binomial distribution calculator with useful charts
 
 by Justin Golden for RGB Studios
 
-justingolden21.github.io
+<a href="http://justingolden21.github.io">justingolden21.github.io</a>
 
-rgbstudios.org
+<a href="http://justingolden21.github.io">justingolden21.github.io</a>
+
+<a href="http://rgbstudios.org">rgbstudios.org</a>
