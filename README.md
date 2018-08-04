@@ -6,6 +6,8 @@ a binomial distribution calculator with useful charts
 
 <a href="http://rgbstudios.org/binomial-calc">rgbstudios.org/binomial-calc</a>
 
+<img src="screenshot.png">
+
 <hr>
 
 by Justin Golden for RGB Studios
