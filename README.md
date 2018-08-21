@@ -2,7 +2,7 @@
 
 Binomial Calculator - RGB Studios
 
-a binomial distribution calculator with useful charts
+A binomial distribution calculator with useful charts
 
 <a href="http://rgbstudios.org/binomial-calc">rgbstudios.org/binomial-calc</a>
 
