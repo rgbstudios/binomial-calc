@@ -1,0 +1,2 @@
+link to android app
+update icons in readme
