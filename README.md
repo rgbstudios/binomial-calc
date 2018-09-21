@@ -1,8 +1,8 @@
 <img src="icon-nocircle.svg" width="64px">
 
-Binomial Calculator - RGB Studios
+# Binomial Calculator - RGB Studios
 
-A binomial distribution calculator with useful charts
+*A binomial distribution calculator with useful charts*
 
 <a href="https://rgbstudios.org/binomial-calc">rgbstudios.org/binomial-calc</a>
 
