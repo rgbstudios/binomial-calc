@@ -1,6 +1,6 @@
 
 /*
-v.1.0.1 5-21
+v.1.0.2 5-21
 todo:
 
 fix overflow, roudning, efficiency problems for very large input

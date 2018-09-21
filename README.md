@@ -1,17 +1,19 @@
-<img src="icon.png">
+<img src="icon-nocircle.svg" width="64px">
 
 Binomial Calculator - RGB Studios
 
 A binomial distribution calculator with useful charts
 
-<a href="http://rgbstudios.org/binomial-calc">rgbstudios.org/binomial-calc</a>
+<a href="https://rgbstudios.org/binomial-calc">rgbstudios.org/binomial-calc</a>
 
 <img src="screenshot.png">
 
 <hr>
 
+V.1.0.2
+
 by Justin Golden for RGB Studios
 
-<a href="http://justingolden21.github.io">justingolden21.github.io</a>
+<a href="https://justingolden21.github.io">justingolden21.github.io</a>
 
-<a href="http://rgbstudios.org">rgbstudios.org</a>
+<a href="https://rgbstudios.org">rgbstudios.org</a>
