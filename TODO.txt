@@ -1,2 +1,4 @@
-link to android app
 update icons in readme
+
+split info into learn andinfo
+info has made with and links to github and donate button, version num
