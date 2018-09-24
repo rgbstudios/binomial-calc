@@ -54,9 +54,9 @@ document.onkeyup = function(e) {
   if(code == 13){ //enter
     calc();
   }
-  else if(code == 73) { //"i"
-    document.getElementById('infoModalButton').click();
-  }
+  // else if(code == 73) { //"i"
+  //   document.getElementById('infoModalButton').click();
+  // }
   else if(code == 78) { //"n"
     document.getElementById('nightButton').click(); 
   }
@@ -215,6 +215,8 @@ $(document).ready(function() {
   document.getElementById("pInput").value = p || "0.5";
   document.getElementById("nInput").value = n || "40";
   document.getElementById("xInput").value = x || "18";
+
+  document.getElementById("pInput").select();
 
   calc();
 

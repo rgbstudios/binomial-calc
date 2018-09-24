@@ -136,42 +136,33 @@
 
 <hr>
 
+
+<button type="button" id="learnModalButton" class="btn btn-default btn-lg" data-toggle="modal" data-target="#learnModal" title="about binomial distributions">
+  <i class="material-icons">school</i>
+</button>
 <button type="button" id="infoModalButton" class="btn btn-default btn-lg" data-toggle="modal" data-target="#infoModal" title="open info">
   <i class="material-icons">info</i>
-</button>
-<button type="button" class="btn btn-default btn-lg" title="contact" onclick="window.open('mailto:justingolden@rgbstudios.org?subject=Binomial%20Calc')">
-  <i class="material-icons">email</i>
 </button>
 <button type="button" id="nightButton" class="btn btn-default btn-lg" title="toggle night mode">
   <i class="material-icons">brightness_3</i>
 </button>
-<button type="button" id="fullscreenButton" class="btn btn-default btn-lg" title="toggle fullscreen">
-  <i class="material-icons">fullscreen</i>
-</button>
-
 <br><br>
 
 <div class="sharethis-inline-share-buttons"></div>
 
 <br>
 
-<h4>Get the Android app <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator" target="_blank">here</a>.</h4>
-
-<p>Made with <a target="_blank" href="https://developers.google.com/chart">Google Charts</a>, 
-  <a target="_blank" href="https://material.io/icons/">Material Icons</a>, and 
-  <a target="_blank" href="https://getbootstrap.com">Bootstrap</a></p>
-
 
 
 <p>&copy; <a href="http://rgbstudios.org" target="_blank">RGB Studios</a><img id="rgbIcon" src="rgb-icon.png"> 2018 </p>
 
 <!-- info modal -->
-<div class="modal fade" id="infoModal" role="dialog">
+<div class="modal fade" id="learnModal" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title"><i class="material-icons">info</i> Binomial Distributions</h3>
+        <h3 class="modal-title"><i class="material-icons">school</i> Binomial Distributions</h3>
       </div>
       <div class="modal-body">
 
@@ -200,12 +191,55 @@
         <p><a href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank">Wikipedia</a>
         and <a href="https://www.mathsisfun.com/data/binomial-distribution.html" target="_blank">Math is Fun</a> on binomial distributions</p>
 
-        <hr>
+      </div> <!-- end modal body -->
+
+    </div>
+
+  </div>
+</div> <!-- end modal -->
+
+<!-- info modal -->
+<div class="modal fade" id="infoModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title"><i class="material-icons">info</i> About</h3>
+      </div>
+      <div class="modal-body">
 
         <p>You can use <kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate inputs</p>
         <p><kbd>Enter</kbd> to calculate. Refreshes graph size if you've resized your window</p>
-        <p>press <kbd>I</kbd> to open and close this</p>
+        <!-- <p>press <kbd>I</kbd> to open and close this</p> -->
         <p>press <kbd>N</kbd> to toggle night mode</p>
+
+        <hr>
+
+        <h4><i class="material-icons">android</i> Get the Android app <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator" target="_blank">here</a></h4>
+
+        <p>Made with <a target="_blank" href="https://developers.google.com/chart">Google Charts</a>, 
+          <a target="_blank" href="https://material.io/icons/">Material Icons</a>, and 
+          <a target="_blank" href="https://getbootstrap.com">Bootstrap</a></p>
+
+        <p>View on Github <a href="https://github.com/rgbstudios/binomial-calc" target="_blank">here</a></p>
+
+        <p>V.1.0.3</p>
+
+        <hr> 
+
+        <button type="button" class="btn btn-default btn-lg" title="contact me" onclick="window.open('mailto:justingolden@rgbstudios.org?subject=Binomial%20Calc')">
+          <i class="material-icons">email</i>
+        </button>
+
+        <button type="button" class="btn btn-default btn-lg" title="donate via PayPal" onclick="window.open('https://www.paypal.me/RGBStudios')">
+          <i class="material-icons">tag_faces</i>
+        </button>
+
+        <button type="button" id="fullscreenButton" class="btn btn-default btn-lg" title="toggle fullscreen">
+          <i class="material-icons">fullscreen</i>
+        </button>
+
+
 
       </div> <!-- end modal body -->
 
@@ -213,6 +247,12 @@
 
   </div>
 </div> <!-- end modal -->
+
+
+
+
+
+
 
 <!-- load sharethis last -->
 <script defer type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b028bd56d6a0b001193c28c&product=inline-share-buttons' async='async'></script>
