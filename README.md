@@ -15,7 +15,7 @@
 
 <img src="screenshot.png">
 
-Also available as an Android app <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator">here</a>
+Also available as an Android app <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator">here <img src="https://lh3.googleusercontent.com/uzXhMwD44B6nvL8eIgAYNK4tYyz7iu1eg22oMK5v3-tPfr9tJzo3SLm4sW8mZZuSKTnm=s360-rw" width="48px"></a>
 
 <hr>
 
