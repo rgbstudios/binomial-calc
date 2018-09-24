@@ -27,8 +27,6 @@ by Justin Golden for RGB Studios
 
 <a href="mailto:justingolden@rgbstudios.org">justingolden@rgbstudios.org</a>
 
-<img src="rgb-icon.png" width="64px">
-
-<a href="https://rgbstudios.org">rgbstudios.org</a>
+<img src="rgb-icon.png" width="32px"> <a href="https://rgbstudios.org">rgbstudios.org</a>
 
 <a href="https://facebook.com/rgbstudios.org">facebook.com/rgbstudios.org</a>
