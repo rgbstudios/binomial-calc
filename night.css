@@ -1,32 +1,23 @@
-*, body {
-  background-color: transparent;
-  color: #ccc !important;
+* {
+	background-color: transparent;
+	color: #ccc !important;
 }
 body, button, input, .modal-content {
-  background-color: #333 !important;
-/*  color: #ccc !important;*/
+	background-color: #333 !important;
 }
-
 tr:nth-child(odd) {
-  background-color: rgba(102,102,102,0.25) !important;
+	background-color: rgba(102,102,102,0.25) !important;
 }
-
 kbd {
-  background-color: #ccc !important;
-  color: #333 !important;
+	background-color: #ccc !important;
+	color: #333 !important;
 }
-
-body {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(204,204,204,0.25) 1px, transparent 1px), linear-gradient(to bottom, rgba(204,204,204,0.25) 1px, transparent 1px);
-}
-
 .text-red {
-  color:#f99 !important;
+	color:#f99 !important;
 }
 .text-green {
-  color:#9f9 !important;
+	color:#9f9 !important;
 }
 .text-blue {
-  color:#99f !important;
+	color:#99f !important;
 }
