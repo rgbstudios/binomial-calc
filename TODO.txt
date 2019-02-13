@@ -3,4 +3,20 @@ update icons in readme
 make night function only redraw night function
 
 
-TODO IMPORTANT: color code with r, g, b, in night mode
+TODO IMPORTANT: color code tds with r, g, b, in night mode
+
+put sharethis back
+
+capitalize titles in html
+
+style error alert in night.css
+
+add link button (click to add params to url and copy, default to no params in url)
+
+simplify wording in learn modal
+
+fix indentation, clean code, move files into folders, make pwa
+
+make night a url param
+
+make it scale a little better on mobile? use a query and decrease padding/margin on table?

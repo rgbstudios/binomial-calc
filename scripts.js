@@ -42,7 +42,7 @@ function variance(p,n,x) {
   return n * p * (1-p);
 }
 function stddev(p,n,x) {
-  return Math.sqrt(variance(p,n,x));
+  return Math.sqrt(variance(p,n,x) );
 }
 
 function round(num, digits) {
@@ -72,7 +72,7 @@ function clear() {
 //https://stackoverflow.com/questions/3900701/onclick-go-full-screen?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 function toggleFullscreen() {
   if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
-   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+   (!document.mozFullScreen && !document.webkitIsFullScreen) ) {
     if (document.documentElement.requestFullScreen) {  
       document.documentElement.requestFullScreen();  
     } else if (document.documentElement.mozRequestFullScreen) {  
@@ -105,36 +105,31 @@ function calc() {
   errorAlert.style.display = "none";
 
   if(isNaN(p) || isNaN(n) || isNaN(x) ) {
-    errorP.innerHTML = "p, n, and x must be numbers";
-    errorAlert.style.display = "block";
-    return;   
+    errorP.innerHTML = "p, n, and x must be numbers";  
   }
   if(p > 1 || p < 0) {
     errorP.innerHTML = "p must be between 0 and 1";
-    errorAlert.style.display = "block";
-    return;
   }
   if(n < 0 || x < 0) {
     errorP.innerHTML = "n and x must be positive integers";
-    errorAlert.style.display = "block";
-    return;
   }
   if(n >= 1000 || x >= 1000) {
     errorP.innerHTML = "n and x must be less than 1000";
-    errorAlert.style.display = "block";
-    return;
   }
   if(n < x) {
     errorP.innerHTML = "n must be &ge; x";
+  }
+
+  if(errorP.innerHTML != "") {
     errorAlert.style.display = "block";
-    return;
+    return;    
   }
 
   //only if valid inputs
   history.replaceState({}, "", "?p=" + p + "&n=" + n + "&x=" + x);
 
   //display results
-  document.getElementById("chooseOutput").value = Math.round(nchoosek(n, x));
+  document.getElementById("chooseOutput").value = Math.round(nchoosek(n, x) );
   document.getElementById("equalOutput").value = round(equal(p, n, x),10);
   document.getElementById("lessOutput").value = round(less(p, n, x),10);
   document.getElementById("greaterOutput").value = round(greater(p, n, x),10);
@@ -155,16 +150,18 @@ function calc() {
       ['P(X>x)', round(greater(p, n, x),5)]
     ]);
 
+    let foregroundColor = night ? '#ccc' : '#333';
+
     let options = {
       'title':'Binomial Distribution', 
-      legend: {textStyle:{color: night ? '#ccc' : '#333'}}, 
-      titleTextStyle:{color: night ? '#ccc' : '#333'}, 
+      legend: {textStyle:{color: foregroundColor}}, 
+      titleTextStyle:{color: foregroundColor}, 
       'width':'75%', 
       colors: ['#339', '#933', '#393'], 
       backgroundColor: { fill:'transparent' } 
     };
 
-    let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    let chart = new google.visualization.PieChart(document.getElementById('piechart') );
     chart.draw(data, options);
 
     //bar
@@ -179,24 +176,24 @@ function calc() {
     data = google.visualization.arrayToDataTable(chartdata);
 
     options = {
-      title: 'Odds by number of successes', 
-      titleTextStyle:{color: night ? '#ccc' : '#333'},
+      title: 'Probability vs number of successes', 
+      titleTextStyle:{color: foregroundColor},
       legend: 'none',
       chartArea: {width: '75%', legend:{position: 'none'} },
       hAxis: {
         title: 'Number of Successes x',
-        textStyle:{color: night ? '#ccc' : '#333'},
-        titleTextStyle:{color: night ? '#ccc' : '#333'}
+        textStyle:{color: foregroundColor},
+        titleTextStyle:{color: foregroundColor}
       },
       vAxis: {
         title: 'P(x)',
-        textStyle:{color: night ? '#ccc' : '#333'},
-        titleTextStyle:{color: night ? '#ccc' : '#333'}
+        textStyle:{color: foregroundColor},
+        titleTextStyle:{color: foregroundColor}
       },
       backgroundColor: { fill:'transparent' }
     };
   
-    chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+    chart = new google.visualization.ColumnChart(document.getElementById('barchart') );
     chart.draw(data, options);
   } //end drawChart
 
@@ -245,6 +242,7 @@ $(document).ready(function() {
       $('#metaColor1').prop('content','#333');
       $('#metaColor2').prop('content','#333');
       $('#metaColor3').prop('content','#333');
+      $('#rgbIcon').prop('src','rgb-icon-dark.png');
       calc(); //update google chart with correct color. when your night mode function is O(n^3)...
     }
     else {
@@ -252,6 +250,7 @@ $(document).ready(function() {
       $('#metaColor1').prop('content','#ccc');
       $('#metaColor2').prop('content','#ccc');
       $('#metaColor3').prop('content','#ccc');
+      $('#rgbIcon').prop('src','rgb-icon.png');
       calc();
     }
   });
