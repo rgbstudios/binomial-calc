@@ -20,4 +20,4 @@ fix overflow, roudning, efficiency problems for very large input
 
 use realfavicongenerator.net
 
-fix indentation, clean code, move files into folders, make pwa
+make pwa
