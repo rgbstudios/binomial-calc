@@ -2,9 +2,6 @@ update icons in readme
 
 make night function only redraw night function
 
-
-TODO IMPORTANT: color code tds with r, g, b, in night mode
-
 put sharethis back
 
 capitalize titles in html

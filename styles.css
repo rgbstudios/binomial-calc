@@ -49,3 +49,13 @@ body {
   background-size: 40px 40px;
   background-image: linear-gradient(to right, rgba(204,204,204,0.25) 1px, transparent 1px), linear-gradient(to bottom, rgba(204,204,204,0.25) 1px, transparent 1px);
 }
+
+.text-red {
+  color:#933;
+}
+.text-green {
+  color:#393;
+}
+.text-blue {
+  color:#339;
+}
