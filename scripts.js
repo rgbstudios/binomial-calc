@@ -238,11 +238,11 @@ $(document).ready(function() {
   $('#nightButton').click(function() {
     night = !night;
     if(night) {
-      $('#nightStyles').prop('href','styles-night.css');
+      $('#nightStyles').prop('href','night.css');
       $('#metaColor1').prop('content','#333');
       $('#metaColor2').prop('content','#333');
       $('#metaColor3').prop('content','#333');
-      $('#rgbIcon').prop('src','rgb-icon-dark.png');
+      $('#rgbIcon').prop('src','img/rgb-icon-dark.png');
       calc(); //update google chart with correct color. when your night mode function is O(n^3)...
     }
     else {
@@ -250,7 +250,7 @@ $(document).ready(function() {
       $('#metaColor1').prop('content','#ccc');
       $('#metaColor2').prop('content','#ccc');
       $('#metaColor3').prop('content','#ccc');
-      $('#rgbIcon').prop('src','rgb-icon.png');
+      $('#rgbIcon').prop('src','img/rgb-icon.png');
       calc();
     }
   });
