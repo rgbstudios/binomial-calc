@@ -2,134 +2,130 @@
 <html lang="en">
 <head>
 
-  <title>Binomial Calc</title>
-  <meta charset="utf-8">
-  <meta name="title=" content="Binomial Calc">
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs">
-  <meta name="keywords" content="binomial, calculator, calc, statistics, stats, probability, distribution">
+	<title>Binomial Calc</title>
+	<meta charset="utf-8">
+	<meta name="title=" content="Binomial Calc">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs">
+	<meta name="keywords" content="binomial, calculator, calc, statistics, stats, probability, distribution">
+	
+	<meta id="metaColor1" name="theme-color" content="#ccc">
+	<meta id="metaColor2" name="msapplication-navbutton-color" content="#ccc">
+	<meta id="metaColor3" name="apple-mobile-web-app-status-bar-style" content="#ccc">
+	
+	<link rel="icon" href="img/favicon.png" type="image/png" sizes="48x48">
 
-  <!-- Chrome, Firefox OS and Opera -->
-  <meta id="metaColor1" name="theme-color" content="#ccc">
-  <!-- Windows Phone -->
-  <meta id="metaColor2" name="msapplication-navbutton-color" content="#ccc">
-  <!-- iOS Safari -->
-  <meta id="metaColor3" name="apple-mobile-web-app-status-bar-style" content="#ccc">
+	<link rel="stylesheet" href="styles.css">
+	<link id="nightStyles" rel="stylesheet" href="">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link rel="icon" href="img/favicon.png" type="image/png" sizes="48x48">
-
-  <link rel="stylesheet" href="styles.css">
-  <link id="nightStyles" rel="stylesheet" href="">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <script src="scripts.js"></script>
-  <!-- google chart -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
+	<script src="scripts.js"></script>
+	<!-- google charts -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 <body>
 
-  <div class="container">
-    <br>
-    <h1 class="text-center"> <img src="img/icon-nocircle.svg" width="64px"> Binomial Distribution Calculator</h1>
-    <h5>by <a href="http://justingolden21.github.io" target="_blank">Justin Golden</a></h5>
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered table-condensed">
+	<div class="container">
+		<br>
+		<h1 class="text-center"> <img src="img/icon-nocircle.svg" width="64px"> Binomial Distribution Calculator</h1>
+		<h5>by <a href="http://justingolden21.github.io" target="_blank">Justin Golden</a></h5>
+		<div class="table-responsive">
+		<table class="table table-striped table-bordered table-condensed">
 
-      <tr>
-        <td><p>Probability of success (single trial)</p></td>
-        <td><b>p</b></td>
-        <td><input autofocus id="pInput" class="form-control" type="number" value="0.5" step=".1" min="0" max="1"><br></td>
-      </tr>
+			<tr>
+				<td><p>Probability of success (single trial)</p></td>
+				<td><b>p</b></td>
+				<td><input autofocus id="pInput" class="form-control" type="number" value="0.5" step=".1" min="0" max="1"><br></td>
+			</tr>
 
-      <tr>
-        <td><p>Number of trials</p></td>
-        <td><b>n</b></td>
-        <td><input id="nInput" class="form-control" type="number" value="40" min="0" max="999"><br></td>
-      </tr>
+			<tr>
+				<td><p>Number of trials</p></td>
+				<td><b>n</b></td>
+				<td><input id="nInput" class="form-control" type="number" value="40" min="0" max="999"><br></td>
+			</tr>
 
-      <tr>
-        <td><p>Number of successes</p></td>
-        <td><b>x</b></td>
-        <td><input id="xInput" class="form-control" type="number" value="18" min="0" max="999"><br></td>
-      </tr>
+			<tr>
+				<td><p>Number of successes</p></td>
+				<td><b>x</b></td>
+				<td><input id="xInput" class="form-control" type="number" value="18" min="0" max="999"><br></td>
+			</tr>
 
-      <tr>
-        <td><div id="errorAlert" class="alert alert-warning"><p id="errorP"></p></div></td>
-        <td><button class="btn btn-default" onclick="calc()" type="button">Calculate</button></td>
-        <td><button id="clearButton" class="btn btn-default" type="button">Clear</button></td>
-      </tr>
+			<tr>
+				<td><div id="errorAlert" class="alert alert-warning"><p id="errorP"></p></div></td>
+				<td><button class="btn btn-default" onclick="calc()" type="button">Calculate</button></td>
+				<td><button id="clearButton" class="btn btn-default" type="button">Clear</button></td>
+			</tr>
 
-      <tr title="probability that number of sucesses is exactly equal to x">
-        <td><p>Binomial probability</p></td>
-        <td><b style="color:#339;">P(X = x)</b></td>
-        <td><input id="equalOutput" class="form-control" disabled value="" type="number">
-          <button type="button" class="btn btn-default btn-sm copy" title="copy">
-            <i class="material-icons icon-outlined">file_copy</i>
-          </button>
-        </td>
-      </tr>
+			<tr title="probability that number of sucesses is exactly equal to x">
+				<td><p>Binomial probability</p></td>
+				<td><b style="color:#339;">P(X = x)</b></td>
+				<td><input id="equalOutput" class="form-control" disabled value="" type="number">
+					<button type="button" class="btn btn-default btn-sm copy" title="copy">
+						<i class="material-icons icon-outlined">file_copy</i>
+					</button>
+				</td>
+			</tr>
 
-      <tr title="probability that number of sucesses is less than x">
-        <td><p>Cumulative probability</p></td>
-        <td><b style="color:#933;">P(X < x)</b></td>
-        <td><input id="lessOutput" class="form-control" disabled value="" type="number">
-          <button type="button" class="btn btn-default btn-sm copy" title="copy">
-            <i class="material-icons icon-outlined">file_copy</i>
-          </button>
-        </td>
-      </tr>
+			<tr title="probability that number of sucesses is less than x">
+				<td><p>Cumulative probability</p></td>
+				<td><b style="color:#933;">P(X < x)</b></td>
+				<td><input id="lessOutput" class="form-control" disabled value="" type="number">
+					<button type="button" class="btn btn-default btn-sm copy" title="copy">
+						<i class="material-icons icon-outlined">file_copy</i>
+					</button>
+				</td>
+			</tr>
 
-      <tr title="probability that number of sucesses is greater than x">
-        <td><p>Cumulative probability</p></td>
-        <td><b style="color:#393;">P(X > x)</b></td>
-        <td><input id="greaterOutput" class="form-control" disabled value="" type="number">
-          <button type="button" class="btn btn-default btn-sm copy" title="copy">
-            <i class="material-icons icon-outlined">file_copy</i>
-          </button>
-        </td>
-      </tr>
+			<tr title="probability that number of sucesses is greater than x">
+				<td><p>Cumulative probability</p></td>
+				<td><b style="color:#393;">P(X > x)</b></td>
+				<td><input id="greaterOutput" class="form-control" disabled value="" type="number">
+					<button type="button" class="btn btn-default btn-sm copy" title="copy">
+						<i class="material-icons icon-outlined">file_copy</i>
+					</button>
+				</td>
+			</tr>
 
-      <tr title="probability that number of sucesses is less than or equal to x">
-        <td><p>Cumulative probability</p></td>
-        <td><b>P(X &le; x)</b></td>
-        <td><input id="lessEqualOutput" class="form-control" disabled value="" type="number">
-          <button type="button" class="btn btn-default btn-sm copy" title="copy">
-            <i class="material-icons icon-outlined">file_copy</i>
-          </button>
-        </td>
-      </tr>
+			<tr title="probability that number of sucesses is less than or equal to x">
+				<td><p>Cumulative probability</p></td>
+				<td><b>P(X &le; x)</b></td>
+				<td><input id="lessEqualOutput" class="form-control" disabled value="" type="number">
+					<button type="button" class="btn btn-default btn-sm copy" title="copy">
+						<i class="material-icons icon-outlined">file_copy</i>
+					</button>
+				</td>
+			</tr>
 
-      <tr title="probability that number of sucesses is greater than or equal to x">
-        <td><p>Cumulative probability</p></td>
-        <td><b>P(X &ge; x)</b></td>
-        <td><input id="greaterEqualOutput" class="form-control" disabled value="" type="number">
-          <button type="button" class="btn btn-default btn-sm copy" title="copy">
-            <i class="material-icons icon-outlined">file_copy</i>
-          </button>
-        </td>
-      </tr>
+			<tr title="probability that number of sucesses is greater than or equal to x">
+				<td><p>Cumulative probability</p></td>
+				<td><b>P(X &ge; x)</b></td>
+				<td><input id="greaterEqualOutput" class="form-control" disabled value="" type="number">
+					<button type="button" class="btn btn-default btn-sm copy" title="copy">
+						<i class="material-icons icon-outlined">file_copy</i>
+					</button>
+				</td>
+			</tr>
 
-      <tr title="number of combinations of x elements chosen out of n options">
-        <td><p>N Choose X</p></td>
-        <td><b><sub>n</sub>C<sub>x</sub></b></td>
-        <td><input id="chooseOutput" class="form-control" disabled value="" type="number">
-          <button type="button" class="btn btn-default btn-sm copy" title="copy">
-            <i class="material-icons icon-outlined">file_copy</i>
-          </button>
-        </td>
-      </tr>
+			<tr title="number of combinations of x elements chosen out of n options">
+				<td><p>N Choose X</p></td>
+				<td><b><sub>n</sub>C<sub>x</sub></b></td>
+				<td><input id="chooseOutput" class="form-control" disabled value="" type="number">
+					<button type="button" class="btn btn-default btn-sm copy" title="copy">
+						<i class="material-icons icon-outlined">file_copy</i>
+					</button>
+				</td>
+			</tr>
 
-  </table>
-  </div>
-  <p id="infoP" class="text-center"></p>
+	</table>
+	</div>
+	<p id="infoP" class="text-center"></p>
 </div>
 
 <div id="piechart"></div>
@@ -138,13 +134,13 @@
 <hr>
 
 <button type="button" id="learnModalButton" class="btn btn-default btn-lg" data-toggle="modal" data-target="#learnModal" title="about binomial distributions">
-  <i class="material-icons">school</i>
+	<i class="material-icons">school</i>
 </button>
 <button type="button" id="infoModalButton" class="btn btn-default btn-lg" data-toggle="modal" data-target="#infoModal" title="open info">
-  <i class="material-icons">info</i>
+	<i class="material-icons">info</i>
 </button>
 <button type="button" id="nightButton" class="btn btn-default btn-lg" title="toggle night mode">
-  <i class="material-icons">brightness_3</i>
+	<i class="material-icons">brightness_3</i>
 </button>
 <br><br>
 
@@ -156,106 +152,99 @@
 
 <!-- learn modal -->
 <div class="modal fade" id="learnModal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title"><i class="material-icons">school</i> Binomial Distributions</h3>
-      </div>
-      <div class="modal-body">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h3 class="modal-title"><i class="material-icons">school</i> Binomial Distributions</h3>
+			</div>
+			<div class="modal-body">
 
-        <p>
-          A binomial experiment with <b>n</b> trials, probability of success <b>p</b>, and <b>x</b> successes, has binomial probability:
-          <br>P(X = x) = <sub>n</sub>C<sub>x</sub> * p<sup>x</sup> * (1 - p)<sup>n - x</sup>
-          <br>
-          <br><sub>n</sub>C<sub>x</sub> ("n choose x"):
-          <br><sub>n</sub>C<sub>x</sub> = n! / [ x! (n - x)! ]
-          <br>
-          <br>Mean (&mu;) = n * p
-          <br>Variance (&sigma;) = n * p * (1-p)
-          <br>Standard Deviation (&sigma;<sup>2</sup>) = &radic; [ n * p * (1-p) ]
-        </p>
+				<p>
+					A binomial experiment with <b>n</b> trials, probability of success <b>p</b>, and <b>x</b> successes, has binomial probability:
+					<br>P(X = x) = <sub>n</sub>C<sub>x</sub> * p<sup>x</sup> * (1 - p)<sup>n - x</sup>
+					<br>
+					<br><sub>n</sub>C<sub>x</sub> ("n choose x"):
+					<br><sub>n</sub>C<sub>x</sub> = n! / [ x! (n - x)! ]
+					<br>
+					<br>Mean (&mu;) = n * p
+					<br>Variance (&sigma;) = n * p * (1-p)
+					<br>Standard Deviation (&sigma;<sup>2</sup>) = &radic; [ n * p * (1-p) ]
+				</p>
 
-        <p><i>Note: You might also see &pi; instead of p, or q, which is 1-p</i></p>
+				<p><i>Note: You might also see &pi; instead of p, or q, which is 1-p</i></p>
 
-        <hr><p><b>p</b> must be between 0 and 1, <b>n</b> and <b>x</b> must be positive integers where <b>n</b> &ge; <b>x</b></p>
+				<hr><p><b>p</b> must be between 0 and 1, <b>n</b> and <b>x</b> must be positive integers where <b>n</b> &ge; <b>x</b></p>
 
-        <br><p>Binomial Experiments must:</p>
-        <ul>
-          <li>Involve repeated trials, with only 2 outcomes (success or failure)</li>
-          <li>The probability of a particular outcome is constant and trials are independent</li>
-        </ul>
+				<br><p>Binomial Experiments must:</p>
+				<ul>
+					<li>Involve repeated trials, with only 2 outcomes (success or failure)</li>
+					<li>The probability of a particular outcome is constant and trials are independent</li>
+				</ul>
 
-        <p><a href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank">Wikipedia</a>
-        and <a href="https://www.mathsisfun.com/data/binomial-distribution.html" target="_blank">Math is Fun</a> on binomial distributions</p>
+				<p><a href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank">Wikipedia</a>
+				and <a href="https://www.mathsisfun.com/data/binomial-distribution.html" target="_blank">Math is Fun</a> on binomial distributions</p>
 
-      </div> <!-- end modal body -->
+			</div> <!-- end modal body -->
 
-    </div>
+		</div>
 
-  </div>
+	</div>
 </div> <!-- end modal -->
 
 <!-- info modal -->
 <div class="modal fade" id="infoModal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title"><i class="material-icons">info</i> About</h3>
-      </div>
-      <div class="modal-body">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h3 class="modal-title"><i class="material-icons">info</i> About</h3>
+			</div>
+			<div class="modal-body">
 
-        <p>You can use <kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate inputs</p>
-        <p><kbd>Enter</kbd> to calculate. Refreshes graph size if you've resized your window</p>
-        <!-- <p>press <kbd>I</kbd> to open and close this</p> -->
-        <p>press <kbd>N</kbd> to toggle night mode</p>
+				<p>You can use <kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate inputs</p>
+				<p><kbd>Enter</kbd> to calculate. Refreshes graph size if you've resized your window</p>
+				<!-- <p>press <kbd>I</kbd> to open and close this</p> -->
+				<p>press <kbd>N</kbd> to toggle night mode</p>
 
-        <hr>
+				<hr>
 
-        <h4><i class="material-icons">android</i> Get the Android app <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator" target="_blank">here</a></h4>
+				<h4><i class="material-icons">android</i> Get the Android app <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator" target="_blank">here</a></h4>
 
-        <p>Made with <a target="_blank" href="https://developers.google.com/chart">Google Charts</a>, 
-          <a target="_blank" href="https://material.io/icons/">Material Icons</a>, 
-          <a target="_blank" href="https://getbootstrap.com">Bootstrap</a>, and
-          <a target="_blank" href="http://imgbot.net">ImgBot</a></p>
-
-
-        <p>View on Github <a href="https://github.com/rgbstudios/binomial-calc" target="_blank">here</a></p>
-
-        <p>V.1.0.3</p>
-
-        <hr> 
-
-        <button type="button" class="btn btn-default" title="contact me" onclick="window.open('mailto:justingolden@rgbstudios.org?subject=Binomial%20Calc')">
-          <i class="material-icons">email</i> Contact
-        </button>
-
-        <button type="button" class="btn btn-default" title="donate via PayPal" onclick="window.open('https://www.paypal.me/RGBStudios')">
-          <i class="material-icons">tag_faces</i> Donate
-        </button>
-
-        <button type="button" id="fullscreenButton" class="btn btn-default" title="toggle fullscreen">
-          <i class="material-icons">fullscreen</i> Fullscreen
-        </button>
+				<p>Made with <a target="_blank" href="https://developers.google.com/chart">Google Charts</a>, 
+					<a target="_blank" href="https://material.io/icons/">Material Icons</a>, 
+					<a target="_blank" href="https://getbootstrap.com">Bootstrap</a>, and
+					<a target="_blank" href="http://imgbot.net">ImgBot</a></p>
 
 
+				<p>View on Github <a href="https://github.com/rgbstudios/binomial-calc" target="_blank">here</a></p>
 
-      </div> <!-- end modal body -->
+				<p>V.1.0.3</p>
 
-    </div>
+				<hr> 
 
-  </div>
+				<button type="button" class="btn btn-default" title="contact me" onclick="window.open('mailto:justingolden@rgbstudios.org?subject=Binomial%20Calc')">
+					<i class="material-icons">email</i> Contact
+				</button>
+
+				<button type="button" class="btn btn-default" title="donate via PayPal" onclick="window.open('https://www.paypal.me/RGBStudios')">
+					<i class="material-icons">tag_faces</i> Donate
+				</button>
+
+				<button type="button" id="fullscreenButton" class="btn btn-default" title="toggle fullscreen">
+					<i class="material-icons">fullscreen</i> Fullscreen
+				</button>
+
+			</div> <!-- end modal body -->
+
+		</div>
+
+	</div>
+
 </div> <!-- end modal -->
 
-
-
-
-
-
-
 <!-- load sharethis last -->
-<!-- <script defer type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b028bd56d6a0b001193c28c&product=inline-share-buttons' async='async'></script> -->
+<script defer type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b028bd56d6a0b001193c28c&product=inline-share-buttons' async='async'></script>
 
 </body>
 </html>
