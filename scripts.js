@@ -1,14 +1,4 @@
 
-/*
-v.1.0.2 5-21
-todo:
-
-fix overflow, roudning, efficiency problems for very large input
-make table more mobile friendly
-use realfavicongenerator.net
-
-*/
-
 function nchoosek(n,k){
   let result = 1;
   for(let i = 1; i <= k; i++){

@@ -16,10 +16,12 @@ body {
 	width: 150px !important;
 }
 ::-moz-selection {
-	background: #ccc;
+	background: #999;
+	color: #fff;
 }
 ::selection {
-	background: #ccc;
+	background: #999;
+	color: #fff;
 }
 svg > g > g:last-child { /*prevent flickering on google charts*/
 	pointer-events: none;

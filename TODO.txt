@@ -1,5 +1,3 @@
-update icons in readme
-
 make night function only redraw night function
 
 put sharethis back
@@ -12,8 +10,14 @@ add link button (click to add params to url and copy, default to no params in ur
 
 simplify wording in learn modal
 
-fix indentation, clean code, move files into folders, make pwa
-
 make night a url param
 
-make it scale a little better on mobile? use a query and decrease padding/margin on table?
+make table more mobile friendly
+	use a query and decrease padding/margin on table
+
+
+fix overflow, roudning, efficiency problems for very large input
+
+use realfavicongenerator.net
+
+fix indentation, clean code, move files into folders, make pwa

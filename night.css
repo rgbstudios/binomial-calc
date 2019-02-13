@@ -21,3 +21,9 @@ kbd {
 .text-blue {
 	color:#99f !important;
 }
+::-moz-selection {
+	background: #ccc;
+}
+::selection {
+	background: #ccc;
+}
