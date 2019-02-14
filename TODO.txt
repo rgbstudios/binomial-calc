@@ -2,10 +2,6 @@ make night function only redraw night function
 
 put sharethis back
 
-capitalize titles in html
-
-style error alert in night.css
-
 add link button (click to add params to url and copy, default to no params in url)
 
 simplify wording in learn modal

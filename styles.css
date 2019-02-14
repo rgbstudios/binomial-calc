@@ -7,7 +7,9 @@ body {
 	background-image: linear-gradient(to right, rgba(204,204,204,0.25) 1px, transparent 1px), linear-gradient(to bottom, rgba(204,204,204,0.25) 1px, transparent 1px);
 }
 #errorAlert {
-	display: none;
+	color: #f93;
+	border-color: #f93;
+	background-color: transparent;
 }
 .form-control {
 	cursor: default !important;

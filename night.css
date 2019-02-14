@@ -27,3 +27,6 @@ kbd {
 ::selection {
 	background: #ccc;
 }
+#errorAlert p {
+	color: #f93 !important;
+}
