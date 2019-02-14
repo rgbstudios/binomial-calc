@@ -33,3 +33,6 @@ kbd {
 #nightButton i {
 	transform: scaleX(-1);
 }
+.st-btn {
+	border: 1px solid #fff;
+}
