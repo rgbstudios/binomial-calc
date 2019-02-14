@@ -106,6 +106,8 @@ function calc() {
 	if(url.searchParams.get('p') ) //update link if exists
 		history.replaceState({}, '', '?p=' + p + '&n=' + n + '&x=' + x + '&night=' + (night?1:0) );
 
+	$('#icon').toggleClass('active');
+
 	//display results
 	$('#chooseOutput').val(Math.round(nchoosek(n, x) ) );
 	$('#equalOutput').val(round(equal(p, n, x),10) );
