@@ -104,7 +104,7 @@ function calc() {
 
 	let url = new URL(window.location.href);
 	if(url.searchParams.get('p') ) //update link if exists
-		history.replaceState({}, '', '?p=' + p + '&n=' + n + '&x=' + x);
+		history.replaceState({}, '', '?p=' + p + '&n=' + n + '&x=' + x + '&night=' + (night?1:0) );
 
 	//display results
 	$('#chooseOutput').val(Math.round(nchoosek(n, x) ) );
@@ -184,19 +184,6 @@ let linkParams = false;
 
 $(document).ready(function() {
 
-	let url = new URL(window.location.href);
-	let p = url.searchParams.get('p');
-	let n = url.searchParams.get('n');
-	let x = url.searchParams.get('x');
-	console.log('Loaded url params... \np: ' + p + ', n: ' + n + ', x: ' + x);
-	//no need to clense input further, calc() takes care of that 
-	$('#pInput').val(p || '0.5');
-	$('#nInput').val(n || '40');
-	$('#xInput').val(x || '18');
-	$('#pInput').select();
-
-	calc();
-
 	//copy buttons
 	$('button.copy').click(function() {
 		let input = $(this).prev('input'); //adjacent input
@@ -214,7 +201,7 @@ $(document).ready(function() {
 		linkParams = !linkParams;
 		if(linkParams) {
 			$(this).html('<i class="material-icons">link</i>');
-			history.replaceState({}, '', '?p=' + $('#pInput').val() + '&n=' + $('#nInput').val() + '&x=' + $('#xInput').val() );
+			history.replaceState({}, '', '?p=' + $('#pInput').val() + '&n=' + $('#nInput').val() + '&x=' + $('#xInput').val() + '&night=' + (night?1:0) );
 		}
 		else {
 			$(this).html('<i class="material-icons">link_off</i>');
@@ -234,7 +221,26 @@ $(document).ready(function() {
 			$('.meta-theme').prop('content','#ccc');
 			$('#rgbIcon').prop('src','img/rgb-icon.png');
 		}
+		if(linkParams)
+			history.replaceState({}, '', '?p=' + $('#pInput').val() + '&n=' + $('#nInput').val() + '&x=' + $('#xInput').val() + '&night=' + (night?1:0) );
 		calc(); //update chart with correct color
 	});
+
+	let url = new URL(window.location.href);
+	let p = url.searchParams.get('p');
+	let n = url.searchParams.get('n');
+	let x = url.searchParams.get('x');
+	if(url.searchParams.get('night')=='1')
+		$('#nightButton').click();
+	console.log('Loaded url params... \np: ' + p + ', n: ' + n + ', x: ' + x);
+	//no need to clense input further, calc() takes care of that 
+	$('#pInput').val(p || '0.5');
+	$('#nInput').val(n || '40');
+	$('#xInput').val(x || '18');
+	$('#pInput').select();
+	if(p)
+		$('#linkButton').click();
+
+	calc();
 
 });

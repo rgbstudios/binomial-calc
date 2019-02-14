@@ -1,9 +1,7 @@
-make night function only redraw night function
+make night function O(1)
 
 put sharethis back
 
-	make night a url param
-
-	fix overflow, roudning, efficiency problems for very large input
+fix overflow, roudning, efficiency problems for very large input
 
 use realfavicongenerator.net, make it a pwa
