@@ -56,3 +56,9 @@ tr:nth-child(odd) {
 .text-blue {
 	color:#339;
 }
+.mjx-chtml {
+	display: inline !important;
+}
+.modal p, .modal h4, .modal li {
+	text-align: left !important;
+}
