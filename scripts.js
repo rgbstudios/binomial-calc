@@ -101,7 +101,10 @@ function calc() {
 	}
 
 	//only if valid inputs
-	history.replaceState({}, '', '?p=' + p + '&n=' + n + '&x=' + x);
+
+	let url = new URL(window.location.href);
+	if(url.searchParams.get('p') ) //update link if exists
+		history.replaceState({}, '', '?p=' + p + '&n=' + n + '&x=' + x);
 
 	//display results
 	$('#chooseOutput').val(Math.round(nchoosek(n, x) ) );
@@ -177,6 +180,7 @@ function calc() {
 } //end calc
 
 let night = false;
+let linkParams = false;
 
 $(document).ready(function() {
 
@@ -205,6 +209,18 @@ $(document).ready(function() {
 	$('#clearButton').click(clear);
 
 	$('#fullscreenButton').click(toggleFullscreen);
+
+	$('#linkButton').click(function() {
+		linkParams = !linkParams;
+		if(linkParams) {
+			$(this).html('<i class="material-icons">link</i>');
+			history.replaceState({}, '', '?p=' + $('#pInput').val() + '&n=' + $('#nInput').val() + '&x=' + $('#xInput').val() );
+		}
+		else {
+			$(this).html('<i class="material-icons">link_off</i>');
+			window.history.replaceState(null, null, window.location.pathname);
+		}
+	});
 
 	$('#nightButton').click(function() {
 		night = !night;

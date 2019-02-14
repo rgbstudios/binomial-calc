@@ -30,3 +30,6 @@ kbd {
 #errorAlert p {
 	color: #f93 !important;
 }
+#nightButton i {
+	transform: scaleX(-1);
+}

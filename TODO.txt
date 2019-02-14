@@ -2,18 +2,8 @@ make night function only redraw night function
 
 put sharethis back
 
-add link button (click to add params to url and copy, default to no params in url)
+	make night a url param
 
-simplify wording in learn modal
+	fix overflow, roudning, efficiency problems for very large input
 
-make night a url param
-
-make table more mobile friendly
-	use a query and decrease padding/margin on table
-
-
-fix overflow, roudning, efficiency problems for very large input
-
-use realfavicongenerator.net
-
-make pwa
+use realfavicongenerator.net, make it a pwa
