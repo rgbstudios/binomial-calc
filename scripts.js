@@ -102,8 +102,7 @@ function calc() {
 
 	//only if valid inputs
 
-	let url = new URL(window.location.href);
-	if(url.searchParams.get('p') ) //update link if exists
+	if(linkParams) //update link if exists
 		history.replaceState({}, '', '?p=' + p + '&n=' + n + '&x=' + x);
 
 	//display results
