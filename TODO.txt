@@ -5,3 +5,9 @@ put sharethis back
 fix overflow, roudning, efficiency problems for very large input
 
 use realfavicongenerator.net, make it a pwa
+
+BUG: when generating a link to the learn modal, if the URL parameters are changed then the learn link maintains the old params
+	until the link buttn is clicked
+	potential solution: try sorting out a system for managing url params
+	potential solution: use window.history and url.searchParams to make code cleaner and correct
+	potential solution: update learn link on calc() as well
