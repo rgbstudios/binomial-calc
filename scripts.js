@@ -239,6 +239,7 @@ $(document).ready(function() {
 			$(this).html('<i class="material-icons">link_off</i>');
 			window.history.replaceState(null, null, window.location.pathname);
 		}
+		$('#learnLink').val(document.URL + (linkParams ? '&q=learn' : '?q=learn') );
 	});
 
 	$('#nightButton').click(function() {
@@ -282,10 +283,13 @@ $(document).ready(function() {
 
 	// link to open learn modal
 	let q = url.searchParams.get('q');
-	if(q=='learn')
+	if(q=='learn') {
 		$('#learnModal').modal('show');
-	
-	$('#learnLink').val(document.URL + (linkParams ? '&q=learn' : '?q=learn') );
+		$('#learnLink').val(document.URL + (linkParams ? '&q=learn' : '') );
+	}
+	else {
+		$('#learnLink').val(document.URL + (linkParams ? '&q=learn' : '?q=learn') );
+	}
 
 	calc();
 
