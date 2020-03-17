@@ -74,6 +74,15 @@ function toggleFullscreen() {
 	}
 }
 
+function downloadImg(imgURI) {
+	let link = document.createElement('a');
+	link.download = 'chart.png';
+	link.href = imgURI;
+	link.click();
+}
+
+let pieChartURI, barChartURI;
+
 function calc() {
 	let p = parseFloat($('#pInput').val() );
 	let n = parseInt($('#nInput').val() );
@@ -133,6 +142,7 @@ function calc() {
 		]);
 
 		let foregroundColor = night ? '#ccc' : '#333';
+		let backgroundColor = !night ? '#fff' : '#333';
 
 		let options = {
 			'title':'Binomial Distribution', 
@@ -140,11 +150,17 @@ function calc() {
 			titleTextStyle: {color: foregroundColor}, 
 			'width':'75%', 
 			colors: ['#339', '#933', '#393'], 
-			backgroundColor: { fill:'transparent' } 
+			backgroundColor: { fill: backgroundColor} 
 		};
 
 		let chart = new google.visualization.PieChart(document.getElementById('piechart') );
+
+		google.visualization.events.addListener(chart, 'ready', function() {
+			pieChartURI = chart.getImageURI(); // for download img
+		});
+
 		chart.draw(data, options);
+		$('svg rect[x=0][y=0]')[0].style.fill='none';
 
 		//bar
 		let chartdata = [['','', { role: 'style' } ]];
@@ -172,11 +188,25 @@ function calc() {
 				textStyle: {color: foregroundColor},
 				titleTextStyle: {color: foregroundColor}
 			},
-			backgroundColor: {fill:'transparent'}
+			backgroundColor: {fill: backgroundColor}
 		};
 	
 		chart = new google.visualization.ColumnChart(document.getElementById('barchart') );
-		chart.draw(data, options);
+
+		google.visualization.events.addListener(chart, 'ready', function() {
+			barChartURI = chart.getImageURI(); // for download img
+		});
+
+		chart.draw(data, options); 
+		// options.backgroundColor = {fill:'transparent'};
+		// chart.draw(data, options);
+
+		// rather than set the background to a solid color, render the chart (calling the callback to save the image URI variable), 
+		// then rendering the chart again (chart.draw() ) with a transparent background (options.backgroundColor)
+		// we must select the background rectangle and do it manually, because the above method does not work
+		// took some testing in console to figure this code out... same code is repeated above for pie chart
+		$('svg rect[x=0][y=0]')[1].style.fill='none';
+
 	} //end drawChart
 
 } //end calc
@@ -228,6 +258,13 @@ $(document).ready(function() {
 		calc(); //update chart with correct color
 	});
 
+	$('#downloadPieChartButton').click(function() {
+		downloadImg(pieChartURI);
+	});
+	$('#downloadBarChartButton').click(function() {
+		downloadImg(barChartURI);
+	});
+
 	let url = new URL(window.location.href);
 	let p = url.searchParams.get('p');
 	let n = url.searchParams.get('n');
@@ -242,6 +279,13 @@ $(document).ready(function() {
 	$('#pInput').select();
 	if(p)
 		$('#linkButton').click();
+
+	// link to open learn modal
+	let q = url.searchParams.get('q');
+	if(q=='learn')
+		$('#learnModal').modal('show');
+	
+	$('#learnLink').val(document.URL + (linkParams ? '&q=learn' : '?q=learn') );
 
 	calc();
 
