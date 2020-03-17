@@ -60,8 +60,15 @@
 
 			<tr>
 				<td><div id="errorAlert" class="alert alert-warning"><p id="errorP"></p></div></td>
-				<td><button class="btn btn-default" onclick="calc()" type="button">Calculate</button></td>
-				<td><button id="clearButton" class="btn btn-default" type="button">Clear</button></td>
+				<td><button class="btn btn-default" onclick="calc()" type="button">
+					Calculate
+					<!-- <i class="material-icons icon-outlined">play_arrow</i> -->
+					<i class="material-icons icon-outlined">arrow_right_alt</i>
+				</button></td>
+				<td><button id="clearButton" class="btn btn-default" type="button">
+					Clear
+					<i class="material-icons icon-outlined">clear_all</i>
+				</button></td>
 			</tr>
 
 			<tr title="Probability that number of sucesses is exactly equal to x">
@@ -224,9 +231,9 @@
 			<div class="modal-body">
 
 				<p>You can use <kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate inputs.</p>
-				<br><p>You can use <kbd>Enter</kbd> to calculate. Refreshes graph size if you've resized your window</p>
+				<br><p>You can use <kbd>Enter</kbd> to calculate. Refreshes graph size if you've resized your window.</p>
 
-				<br><p> Get the <a href="https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator" target="_blank">Android app <i class="material-icons">android</i></a></p>
+				<br><button class="btn btn-default" title="Open the Android app Play Store page" onclick="window.open('https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator')"><b> Get the Android app <i class="material-icons">android</i></b></button>
 
 				<hr>
 
@@ -261,7 +268,7 @@
 </div> <!-- end modal -->
 
 <!-- load sharethis last -->
-<!-- <script defer type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b028bd56d6a0b001193c28c&product=inline-share-buttons' async='async'></script> -->
+<script defer type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b028bd56d6a0b001193c28c&product=inline-share-buttons' async='async'></script>
 
 </body>
 </html>
