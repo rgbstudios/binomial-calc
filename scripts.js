@@ -1,4 +1,4 @@
-function nchoosek(n,k){
+function nchoosek(n,k) {
 	let result = 1;
 	for(let i = 1; i <= k; i++) {
 		result *= (n+1-i)/i;
@@ -40,7 +40,7 @@ function round(num, digits) {
 
 document.onkeyup = (e)=> {
 	let code = e.keyCode ? e.keyCode : e.which;
-	if(code == 13){ //enter
+	if(code == 13 && document.activeElement.tagName=='INPUT') { //enter
 		calc();
 	}
 }
@@ -262,6 +262,10 @@ $( ()=> {
 
 	$('#downloadPieChartButton').click( ()=> downloadImg(pieChartURI) );
 	$('#downloadBarChartButton').click( ()=> downloadImg(barChartURI) );
+
+	$('.modal').on('shown.bs.modal', (e)=> {
+		$(e.target).find('.close').focus();
+	});
 
 	let url = new URL(window.location.href);
 	let p = url.searchParams.get('p');

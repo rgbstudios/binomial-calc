@@ -1,8 +1,5 @@
 put sharethis back
 
-BUG: calc()s twice if enter key on focused btn (once for btn once for enter)
-	SOLUTION: check if btn is focused first
-
 use popover for titles
 
 new settings modal
@@ -10,8 +7,6 @@ new settings modal
 	move fullscreen, donate, night btns there
 
 recolor modal btns
-
-focus modal close btn on modal open
 
 make link to android app more prominent? display in bottom banner?
 
