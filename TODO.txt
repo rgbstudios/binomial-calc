@@ -5,6 +5,8 @@ use popover for titles
 new settings modal
 	setting for rounding places
 	move fullscreen, donate, night btns there
+	icon display toggle switch
+	option to display probabilities as percentage (ex. 3.2% instead of 0.032)
 
 recolor modal btns
 
@@ -16,6 +18,8 @@ increase max input size to 10,000
 organize css?
 
 diagram images for cumulative probability outputs?
+
+more calculations? formula for charting binomial distribution line function?
 
 fix overflow, rounding, efficiency problems for very large inputs
 

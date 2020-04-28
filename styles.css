@@ -3,7 +3,7 @@
 	text-align: center;
 }
 body {
-	background-size: 40px 40px;
+	background-size: 32px 32px;
 	background-image: linear-gradient(to right, rgba(204,204,204,0.25) 1px, transparent 1px), linear-gradient(to bottom, rgba(204,204,204,0.25) 1px, transparent 1px);
 }
 #errorAlert {
@@ -14,8 +14,8 @@ body {
 .form-control {
 	cursor: default !important;
 	display: inline !important;
-	margin-right: 25px;
-	width: 150px !important;
+	margin-right: 4px;
+	width: 160px !important;
 }
 ::-moz-selection {
 	background: #999;
@@ -41,7 +41,7 @@ img {
 }
 .table-responsive { /*for bootstrap layouts*/
 	overflow-x: auto;
-	width: 90%;
+	/*width: 90%;*/
 }
 tr:nth-child(odd) {
 	background-color: rgba(204,204,204,0.25) !important;
@@ -78,4 +78,12 @@ tr:nth-child(odd) {
 }
 label {
 	font-weight: bold;
+}
+.diagram {
+	/*width: 32px;*/
+	width: 24px;
+	/*border: 1px solid #333;*/
+	border-radius: 50%;
+	box-shadow: 0px 4px 0px #333;
+	margin-left: 4px;
 }
