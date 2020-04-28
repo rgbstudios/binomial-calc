@@ -70,3 +70,9 @@ tr:nth-child(odd) {
 #icon.active {
 	transform: scale(1.25);
 }
+#learnLink {
+	width: 90% !important;
+}
+.close {
+	text-shadow: none !important;
+}

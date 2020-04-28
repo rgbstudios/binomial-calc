@@ -145,7 +145,7 @@ function calc() {
 		let backgroundColor = !night ? '#fff' : '#333';
 
 		let options = {
-			'title':'Binomial Distribution', 
+			'title':'Probability Relative to x', 
 			legend: {textStyle: {color: foregroundColor} }, 
 			titleTextStyle: {color: foregroundColor}, 
 			'width':'75%', 
@@ -174,7 +174,7 @@ function calc() {
 		data = google.visualization.arrayToDataTable(chartdata);
 
 		options = {
-			title: 'Probability vs number of successes', 
+			title: 'Probability vs Number of Successes', 
 			titleTextStyle:{color: foregroundColor},
 			legend: 'none',
 			chartArea: {width: '75%', legend: {position: 'none'} },
@@ -247,7 +247,7 @@ $(document).ready(function() {
 		if(night) {
 			$('#nightStyles').prop('href','night.css');
 			$('.meta-theme').prop('content','#333');
-			$('#rgbIcon').prop('src','img/rgb-icon-dark.png');
+			// $('#rgbIcon').prop('src','img/rgb-icon-dark.png');
 		}
 		else {
 			$('#nightStyles').prop('href','');
