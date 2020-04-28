@@ -248,15 +248,16 @@ $(document).ready(function() {
 			$('#nightStyles').prop('href','night.css');
 			$('.meta-theme').prop('content','#333');
 			// $('#rgbIcon').prop('src','img/rgb-icon-dark.png');
+			$('svg text').css('fill', '#fff');
 		}
 		else {
 			$('#nightStyles').prop('href','');
 			$('.meta-theme').prop('content','#ccc');
-			$('#rgbIcon').prop('src','img/rgb-icon.png');
+			// $('#rgbIcon').prop('src','img/rgb-icon.png');
+			$('svg text').css('fill', '#333');
 		}
 		if(linkParams)
 			history.replaceState({}, '', '?p=' + $('#pInput').val() + '&n=' + $('#nInput').val() + '&x=' + $('#xInput').val() + '&night=' + (night?1:0) );
-		calc(); //update chart with correct color
 	});
 
 	$('#downloadPieChartButton').click(function() {
