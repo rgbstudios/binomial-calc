@@ -20,6 +20,8 @@ organize css?
 
 more calculations? formula for charting binomial distribution line function?
 
+modal that displays your "work" with numbers
+
 ----
 
 fix overflow, rounding, efficiency problems for very large inputs
