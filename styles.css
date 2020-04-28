@@ -76,3 +76,6 @@ tr:nth-child(odd) {
 .close {
 	text-shadow: none !important;
 }
+label {
+	font-weight: bold;
+}
