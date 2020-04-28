@@ -9,6 +9,10 @@ function nchoosek(n,k){
 function equal(p,n,x) {
 	return nchoosek(n,x) * Math.pow(p,x) * Math.pow(1-p,n-x);
 }
+function equal_(p,n,x,nchoosek) {
+	// equal_ runs faster than equal
+	return nchoosek * Math.pow(p,x) * Math.pow(1-p,n-x);
+}
 function less(p,n,x) {
 	let result = 0;
 	for(let i=0; i<x; i++) {
@@ -32,6 +36,10 @@ function variance(p,n,x) {
 }
 function stddev(p,n,x) {
 	return Math.sqrt(variance(p,n,x) );
+}
+function stddev_(variance) {
+	// stddev_ runs faster than stddev
+	return Math.sqrt(variance);
 }
 
 function round(num, digits) {
@@ -83,6 +91,7 @@ function downloadImg(imgURI) {
 let pieChartURI, barChartURI;
 
 function calc() {
+	console.time('calc');
 	let p = parseFloat($('#pInput').val() );
 	let n = parseInt($('#nInput').val() );
 	let x = parseInt($('#xInput').val() );
@@ -116,14 +125,20 @@ function calc() {
 
 	$('#icon').toggleClass('active');
 
+	//cache vals for efficiency
+	let ans = {};
+	ans.nchoosek = nchoosek(n, x);
+	ans.equal = equal_(p, n, x, ans.nchoosek);
+	ans.less = less(p, n, x);
+	ans.greater = greater(p, n, x);
+
 	//display results
-	// TODO: cache vals for efficiency
-	$('#chooseOutput').val(Math.round(nchoosek(n, x) ) );
-	$('#equalOutput').val(round(equal(p, n, x),10) );
-	$('#lessOutput').val(round(less(p, n, x),10) );
-	$('#greaterOutput').val(round(greater(p, n, x),10) );
-	$('#lessEqualOutput').val(round(equal(p, n, x) + less(p, n, x),10) );
-	$('#greaterEqualOutput').val(round(equal(p, n, x) + greater(p, n, x),10) );
+	$('#chooseOutput').val(Math.round(ans.nchoosek) );
+	$('#equalOutput').val(round(ans.equal,10) );
+	$('#lessOutput').val(round(ans.less,10) );
+	$('#greaterOutput').val(round(ans.greater,10) );
+	$('#lessEqualOutput').val(round(ans.equal+ans.less,10) );
+	$('#greaterEqualOutput').val(round(ans.equal+ans.greater,10) );
 	$('#infoP').html('Mean (&mu;) = ' + round(mean(p, n, x),10) + 
 		'<br>Variance (&sigma;) = ' + round(variance(p, n, x),10) + 
 		'<br>Standard Deviation (&sigma;<sup>2</sup>) = ' + round(stddev(p, n, x),10) );
@@ -136,9 +151,9 @@ function calc() {
 		//pie
 		let data = google.visualization.arrayToDataTable([
 			['Set', 'Odds'],
-			['P(X=x)', round(equal(p, n, x), 5)],
-			['P(X<x)', round(less(p, n, x), 5)],
-			['P(X>x)', round(greater(p, n, x), 5)]
+			['P(X=x)', round(ans.equal, 5)],
+			['P(X<x)', round(ans.less, 5)],
+			['P(X>x)', round(ans.greater, 5)]
 		]);
 
 		let foregroundColor = night ? '#ccc' : '#333';
@@ -209,6 +224,7 @@ function calc() {
 
 	} //end drawChart
 
+	console.timeEnd('calc');
 } //end calc
 
 let night = false;
