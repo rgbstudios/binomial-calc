@@ -1,5 +1,16 @@
 put sharethis back
 
+BUG: calc()s twice if enter key on focused btn (once for btn once for enter)
+	SOLUTION: check if btn is focused first
+
+use popover for titles
+
+new settings modal
+	setting for rounding places
+	move fullscreen, donate, night btns there
+
+recolor modal btns
+
 fix overflow, roudning, efficiency problems for very large input
 
 use realfavicongenerator.net, make it a pwa
