@@ -1,4 +1,3 @@
-
 function nchoosek(n,k){
 	let result = 1;
 	for(let i = 1; i <= k; i++) {
@@ -39,7 +38,7 @@ function round(num, digits) {
 	return (Math.round(num*Math.pow(10,digits) ) / Math.pow(10,digits) );
 }
 
-document.onkeyup = function(e) {
+document.onkeyup = (e)=> {
 	let code = e.keyCode ? e.keyCode : e.which;
 	if(code == 13){ //enter
 		calc();
@@ -118,6 +117,7 @@ function calc() {
 	$('#icon').toggleClass('active');
 
 	//display results
+	// TODO: cache vals for efficiency
 	$('#chooseOutput').val(Math.round(nchoosek(n, x) ) );
 	$('#equalOutput').val(round(equal(p, n, x),10) );
 	$('#lessOutput').val(round(less(p, n, x),10) );
@@ -155,7 +155,7 @@ function calc() {
 
 		let chart = new google.visualization.PieChart(document.getElementById('piechart') );
 
-		google.visualization.events.addListener(chart, 'ready', function() {
+		google.visualization.events.addListener(chart, 'ready', ()=> {
 			pieChartURI = chart.getImageURI(); // for download img
 		});
 
@@ -193,7 +193,7 @@ function calc() {
 	
 		chart = new google.visualization.ColumnChart(document.getElementById('barchart') );
 
-		google.visualization.events.addListener(chart, 'ready', function() {
+		google.visualization.events.addListener(chart, 'ready', ()=> {
 			barChartURI = chart.getImageURI(); // for download img
 		});
 
@@ -214,10 +214,10 @@ function calc() {
 let night = false;
 let linkParams = false;
 
-$(document).ready(function() {
+$( ()=> {
 
 	//copy buttons
-	$('button.copy').click(function() {
+	$('button.copy').click( ()=> {
 		let input = $(this).prev('input'); //adjacent input
 		input.prop('disabled', false);
 		input.select();
@@ -229,7 +229,7 @@ $(document).ready(function() {
 
 	$('#fullscreenButton').click(toggleFullscreen);
 
-	$('#linkButton').click(function() {
+	$('#linkButton').click( ()=> {
 		linkParams = !linkParams;
 		if(linkParams) {
 			$(this).html('<i class="material-icons">link</i>');
@@ -242,30 +242,24 @@ $(document).ready(function() {
 		$('#learnLink').val(document.URL + (linkParams ? '&q=learn' : '?q=learn') );
 	});
 
-	$('#nightButton').click(function() {
+	$('#nightButton').click( ()=> {
 		night = !night;
 		if(night) {
 			$('#nightStyles').prop('href','night.css');
 			$('.meta-theme').prop('content','#333');
-			// $('#rgbIcon').prop('src','img/rgb-icon-dark.png');
 			$('svg text').css('fill', '#fff');
 		}
 		else {
 			$('#nightStyles').prop('href','');
 			$('.meta-theme').prop('content','#ccc');
-			// $('#rgbIcon').prop('src','img/rgb-icon.png');
 			$('svg text').css('fill', '#333');
 		}
 		if(linkParams)
 			history.replaceState({}, '', '?p=' + $('#pInput').val() + '&n=' + $('#nInput').val() + '&x=' + $('#xInput').val() + '&night=' + (night?1:0) );
 	});
 
-	$('#downloadPieChartButton').click(function() {
-		downloadImg(pieChartURI);
-	});
-	$('#downloadBarChartButton').click(function() {
-		downloadImg(barChartURI);
-	});
+	$('#downloadPieChartButton').click( ()=> downloadImg(pieChartURI) );
+	$('#downloadBarChartButton').click( ()=> downloadImg(barChartURI) );
 
 	let url = new URL(window.location.href);
 	let p = url.searchParams.get('p');
