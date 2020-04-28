@@ -7,6 +7,7 @@ new settings modal
 	move fullscreen, donate, night btns there
 	icon display toggle switch
 	option to display probabilities as percentage (ex. 3.2% instead of 0.032)
+	print btn?
 
 recolor modal btns
 
