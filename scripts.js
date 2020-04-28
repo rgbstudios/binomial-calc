@@ -83,6 +83,7 @@ function downloadImg(imgURI) {
 let pieChartURI, barChartURI;
 
 function calc() {
+	console.time('calc');
 	let p = parseFloat($('#pInput').val() );
 	let n = parseInt($('#nInput').val() );
 	let x = parseInt($('#xInput').val() );
@@ -209,6 +210,7 @@ function calc() {
 
 	} //end drawChart
 
+	console.timeEnd('calc');
 } //end calc
 
 let night = false;
