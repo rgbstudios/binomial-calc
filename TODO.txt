@@ -11,6 +11,11 @@ new settings modal
 
 recolor modal btns
 
+focus modal close btn on modal open
+
+make link to android app more prominent? display in bottom banner?
+
+
 fix overflow, roudning, efficiency problems for very large input
 
 use realfavicongenerator.net, make it a pwa

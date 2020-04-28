@@ -22,7 +22,7 @@ V.1.0.3
 
 by Justin Golden for RGB Studios
 
-<a href="https://justingolden21.github.io">justingolden21.github.io</a>
+<a href="https://justingolden.me">justingolden.me</a>
 
 <a href="mailto:justingolden@rgbstudios.org">justingolden@rgbstudios.org</a>
 
