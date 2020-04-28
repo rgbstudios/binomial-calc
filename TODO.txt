@@ -13,6 +13,10 @@ make link to android app more prominent? display in bottom banner?
 increase max input size to 10,000
 	must use bigInt, otherwise vals are "infinity"
 
+organize css?
+
+diagram images for cumulative probability outputs?
+
 fix overflow, rounding, efficiency problems for very large inputs
 
 use realfavicongenerator.net, make it a pwa
